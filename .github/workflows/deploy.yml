@@ -3,11 +3,8 @@ on:
   push:
     branches: ["main"]
 jobs:
-  tests:
-    uses: rockeaters/PrivateBin/.github/workflows/tests.yml@main
   deploy:
     runs-on: ubuntu-latest
-    needs: [tests]
     steps:
       - name: Establish secure WireGuard session
         uses: NexRX/WireGuard-Session@v1
